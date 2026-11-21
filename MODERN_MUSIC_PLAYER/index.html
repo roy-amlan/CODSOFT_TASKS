@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody - Modern Music Player</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-headphones"></i>
+            <h2>Melody</h2>
+        </div>
+
+        <div class="menu">
+            <h4>MENU</h4>
+
+            <a href="#" class="active">
+                <i class="fas fa-house"></i> Home
+            </a>
+
+            <a href="#playlist-section">
+                <i class="fas fa-music"></i> My Playlist
+            </a>
+
+            <a href="#favorites-section">
+                <i class="fas fa-heart"></i> Favourites
+            </a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <p>Feel the Music.</p>
+            <span>Made for music lovers.</span>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Good Music, Good Mood.</h1>
+                <p>Discover your favourite sounds.</p>
+            </div>
+
+            <div class="user-icon">
+                <i class="fas fa-user"></i>
+            </div>
+        </header>
+
+
+        <!-- FEATURED SECTION -->
+        <section class="featured">
+
+            <div class="featured-text">
+                <span>YOUR MUSIC SPACE</span>
+                <h2>Music that<br>moves your soul.</h2>
+                <p>Listen to your favourite tracks anytime, anywhere.</p>
+                <button id="exploreBtn">Explore Music</button>
+            </div>
+
+            <div class="featured-icon">
+                <i class="fas fa-compact-disc"></i>
+            </div>
+
+        </section>
+
+
+        <!-- RECENTLY PLAYED -->
+        <section class="music-section">
+
+            <div class="section-heading">
+                <h2>Recently Played</h2>
+                <span>Your music collection</span>
+            </div>
+
+            <div class="song-grid" id="songGrid">
+
+                <!-- Songs will be added through JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- PLAYLIST -->
+        <section class="music-section" id="playlist-section">
+
+            <div class="section-heading">
+                <h2>My Playlist</h2>
+                <span>All your favourite tracks</span>
+            </div>
+
+            <div class="playlist-container" id="playlist">
+
+                <!-- Playlist will be added through JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- FAVOURITES -->
+        <section class="music-section" id="favorites-section">
+
+            <div class="section-heading">
+                <h2>Favourite Songs</h2>
+                <span>Your most loved tracks</span>
+            </div>
+
+            <div class="playlist-container" id="favoritesList">
+
+                <!-- Favourite songs will appear here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- MUSIC PLAYER BOTTOM BAR -->
+<footer class="music-player">
+
+    <div class="current-song">
+
+        <img src="images/default.jpeg" alt="Album Cover" id="currentCover">
+
+        <div class="current-info">
+            <h4 id="currentTitle">Select a Song</h4>
+            <p id="currentArtist">Unknown Artist</p>
+        </div>
+
+        <button id="favoriteBtn" class="icon-btn" aria-label="Add to favourites">
+            <i class="far fa-heart"></i>
+        </button>
+
+    </div>
+
+
+    <div class="player-controls">
+
+        <div class="control-buttons">
+
+            <button id="shuffleBtn" class="icon-btn" aria-label="Shuffle">
+                <i class="fas fa-shuffle"></i>
+            </button>
+
+            <button id="prevBtn" class="icon-btn" aria-label="Previous">
+                <i class="fas fa-backward-step"></i>
+            </button>
+
+            <button id="playBtn" class="play-btn" aria-label="Play">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <button id="nextBtn" class="icon-btn" aria-label="Next">
+                <i class="fas fa-forward-step"></i>
+            </button>
+
+            <button id="repeatBtn" class="icon-btn" aria-label="Repeat">
+                <i class="fas fa-repeat"></i>
+            </button>
+
+        </div>
+
+        <div class="progress-container">
+
+            <span id="currentTime">0:00</span>
+
+            <input type="range" id="progressBar" min="0" max="100" value="0">
+
+            <span id="duration">0:00</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="volume-control">
+
+        <button id="muteBtn" class="icon-btn" aria-label="Mute">
+            <i class="fas fa-volume-high"></i>
+        </button>
+
+        <input type="range" id="volumeBar" min="0" max="100" value="70">
+
+    </div>
+
+</footer>
+
+
+<!-- AUDIO ELEMENT -->
+<audio id="audioPlayer"></audio>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
